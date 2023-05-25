@@ -38,6 +38,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
+    // '@nuxtjs/proxy'
   ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -61,5 +63,16 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  axios: {
+    prefix: '/api',
+    credentials: false,
+    proxy: true
+  },
+  proxy:
+  {
+    '/api': 'http://127.0.0.1:8080',
+    '/images': 'http://127.0.0.1:8080'
   }
 }
